@@ -1,0 +1,77 @@
+---
+// Noted
+// // Javascript
+// const data = "Hello"
+
+// // Typescript
+// const someValue: string = "another value"
+
+// let newVar: string = "this is a new var"
+
+// type Props = {
+//     name: string
+// }
+
+// interface Props {
+
+// }
+
+// // imports
+// // Astro components
+// import Style from '../components/Style.astro'
+// // Markdown
+// // JS
+// import {hello} from '../hello'
+// // TS
+// import {forgotPassword} from '../forgotPassword'
+// // NPM packages
+// import titleCase from 'title-case'
+// // JSON
+// // CSS
+// // CSS Module(.module.css)
+// // Images(.svg .jpg .png)
+// import imgRef from './image.png'
+
+import Code from "../components/Code.astro"
+import Main from "../components/Main.astro"
+import Text from "../components/Text.astro"
+
+//Fetching data
+const URL = "https://random-data-api.com/api/users/random_user?size=6"
+const response = await fetch(URL)
+const data = await response.json()
+
+---
+
+<!-- consuming variabel -->
+ <!-- <h1>Random Person</h1>
+ <pre>
+    {JSON.stringify(data, null,2)}
+ </pre> -->
+<Main>
+ <!-- Dynamic attribute -->
+<a href={URL}> Go get a user</a>
+
+<!-- Dynamic HTML -->
+ <Text as="h1">Here are the {data.length} users</Text>
+ <Text as="p">Read more about the users below</Text>
+
+ <p>Use an <Code>if</Code> statement. Otherwise, use a <Code>map()</Code>.</p>
+
+<ul>
+    {
+        data.map((user) => {
+            const { gender } = user;
+            // Non-binary
+            return <li>
+                <span>{`${user.first_name} ${user.last_name}`}</span>
+                <span>{gender === "Non-binary" && ":Z" }</span>
+            </li>;
+        })
+    }
+</ul>
+
+<!-- Conditional rendering -->
+ </Main>
+
+

@@ -1,0 +1,18 @@
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>HTML 44</title>
+</head>
+<body>
+    <main>
+        <h1>This is the header before the slot</h1>
+        <slot />
+
+        <p>This is a paragraph in the Main component</p>
+        <slot name="after-intro"/>
+
+        <footer>&copy; 2023</footer>
+        <slot name="after-footer"/>
+
+    </main>
+</body>

@@ -1,0 +1,17 @@
+{
+  "name": "astro-component",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "astro dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "astro": "^4.16.7",
+    "title-case": "^4.3.2"
+  }
+}
